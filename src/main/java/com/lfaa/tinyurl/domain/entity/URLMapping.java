@@ -8,15 +8,14 @@ import org.apache.commons.codec.digest.DigestUtils;
 import java.nio.charset.Charset;
 import java.util.Base64;
 
+import static com.lfaa.tinyurl.domain.entity.URLMappingParam.TINY_URL_PREFIX;
+import static com.lfaa.tinyurl.domain.entity.URLMappingParam.TINY_URL_SIZE;
+
 @EqualsAndHashCode
 public class URLMapping {
-    // todo: parameter into application.properties
-    private int TINY_URL_SIZE = 6;
-    private String TINY_URL_PREFIX = "http://lfaa.ty/";
-
     @Getter private URL original;
     @Getter private URL tiny;
-    @Setter @Getter private long id;
+    @Setter @Getter private Long id;
     @Getter private URLInfo urlInfo;
 
     public URLMapping(String original, long userId) {

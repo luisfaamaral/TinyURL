@@ -6,7 +6,7 @@ import java.time.LocalDateTime;
 
 public class URLInfo {
     @Getter private LocalDateTime createdDate;
-    @Getter private long userId;
+    @Getter private Long userId;
 
     public URLInfo(long userId) {
         this.createdDate = LocalDateTime.now();
