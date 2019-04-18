@@ -9,12 +9,13 @@ import java.util.List;
 
 @Repository
 public class URLMappingRepositoryImpl implements URLMappingRepository {
+    // todo: change global array to database
     private List<URLMapping> urlMappingList = new ArrayList<>();
     private long INITIAL_URL_MAPPING_INDEX = 1;
 
     @Override
     public void save(URLMapping urlMapping) {
-        urlMapping.setMappingId(INITIAL_URL_MAPPING_INDEX++);
+        urlMapping.setId(INITIAL_URL_MAPPING_INDEX++);
         urlMappingList.add(urlMapping);
     }
 
