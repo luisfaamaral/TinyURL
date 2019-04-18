@@ -1,6 +1,5 @@
 package com.lfaa.tinyurl.application.rest.controller;
 
-import com.lfaa.tinyurl.domain.entity.URL;
 import com.lfaa.tinyurl.domain.entity.URLMapping;
 import com.lfaa.tinyurl.domain.service.URLMappingService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,10 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.ws.rs.core.Response;
 import java.util.List;
-
-import static com.lfaa.tinyurl.domain.entity.URLMappingParam.URL_MAPPING_VALID;
 
 @RestController
 public class URLMappingController {
@@ -22,24 +18,10 @@ public class URLMappingController {
         this.urlMappingService = tinyURLService;
     }
 
-    @GetMapping("/")
-    String index() {
-        return " <b><u>WEBSERVICES</u></b>" +
-                " <ul>" +
-                " <li>POST: /tinyurl            </li>" +
-                " <li>GET: /tinyurl             </li>" +
-                " <li>GET: /tinyurl/userid/{1}  </li>" +
-                " </ul>";
-    }
-
     @PostMapping("/tinyurl")
     ResponseEntity save(@RequestBody final URLMapping urlMapping) {
-        URL tinyURL = null;
-
         try {
-            if (urlMappingService.isValidURLMapping(urlMapping))
-                urlMappingService.save(urlMapping);
-
+            if (urlMappingService.isValidURLMapping(urlMapping)) urlMappingService.save(urlMapping);
         } catch (Exception e) {
             e.printStackTrace();
 

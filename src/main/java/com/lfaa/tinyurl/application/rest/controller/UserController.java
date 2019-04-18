@@ -9,8 +9,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-import javax.ws.rs.core.Response;
-
 // todo: It should be moved to another micro-service - user specific
 @Controller
 public class UserController {

@@ -1,6 +1,5 @@
 package com.lfaa.tinyurl.domain.service.impl;
 
-import com.lfaa.tinyurl.domain.entity.URL;
 import com.lfaa.tinyurl.domain.entity.URLMapping;
 import com.lfaa.tinyurl.domain.service.URLMappingService;
 import com.lfaa.tinyurl.domain.service.UserService;
@@ -11,7 +10,8 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
-import static com.lfaa.tinyurl.domain.entity.URLMappingParam.*;
+import static com.lfaa.tinyurl.domain.entity.URLMappingParam.URL_MAPPING_INVALID_USER;
+import static com.lfaa.tinyurl.domain.entity.URLMappingParam.URL_MAPPING_NULL_VALUES;
 
 @Service
 public class URLMappingServiceImpl implements URLMappingService {
